@@ -1,0 +1,13 @@
+#! /bin/bash
+file="userInfo.conf"
+bearer=$(egrep 'token' $file | sed 's/,/\\n/g')
+tempfile=".bearer_temp"
+echo $bearer > $tempfile
+
+bearer=$(grep 'token' $tempfile | sed 's/.*token"://g')
+rm -f $tempfile
+
+curl --location --request POST 'https://testopenapi.sobot.com/tokens/getToken' \
+--header 'temp-id: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqY192Nl9jczJAc29ib3QuY29tIiwiZXhwIjoxNjU3NzgyNDU0fQ.D1-xEkjKEjJYv-V98FU-yzMUJW9s1F31VJmQ10-Utfw'
+
+echo "export default {bearer: ${bearer}}" > bearer.js

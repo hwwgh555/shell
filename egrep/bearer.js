@@ -1,0 +1,1 @@
+export default {bearer: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqY192Nl9jczFAc29ib3QuY29tIiwiZXhwIjoxNjU3ODczMTk1fQ.XTS6XpxuWcY78u8qgtPJ2IIf3qYV6_BglSD6PeesGT0"}
